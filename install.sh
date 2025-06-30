@@ -23,7 +23,7 @@ mv termux-config/temas ~/.temas
 git clone https://github.com/TakYzGG/my-dots2
 
 # Instalar configuracion de bash
-mv my-dots2/dots/basrc ~/.bashrc
+mv my-dots2/dots/bashrc ~/.bashrc
 
 # Instalar temas de neovim
 mv my-dots2/nvim ~/.config/nvim
