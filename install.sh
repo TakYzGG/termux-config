@@ -5,8 +5,8 @@
 echo "Comenzando instalacion..."
 
 # Actualizar sistema
-pkg update
-pkg upgrade
+pkg update -y
+pkg upgrade -y
 
 # Crear carpetas
 mkdir ~/.local/bin
@@ -15,16 +15,17 @@ mkdir ~/.config
 # Instalar paquetes
 pkg install -y git wget neovim lf neofetch htop python
 
-# Descargar config de bash
-wget https://raw.githubuserconten.com/TakYzGG/my-dots2/main/dots/bashrc
-mv bashrc ~/.bashrc
-
 # Instalar temas de termux
 git clone https://github.com/TakYzGG/termux-config
 mv termux-config/temas ~/.temas
 
-# Instalar temas de neovim
+# Clonar mis dots
 git clone https://github.com/TakYzGG/my-dots2
+
+# Instalar configuracion de bash
+mv my-dots2/dots/basrc ~/.bashrc
+
+# Instalar temas de neovim
 mv my-dots2/nvim ~/.config/nvim
 
 # Mover script para cambiar los temas
