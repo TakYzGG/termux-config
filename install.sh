@@ -1,40 +1,35 @@
 #/bin/sh
-# Script para instalar mi configuracion de termux
+# -- Script para instalar mi configuracion de termux --
 
-# Mensaje inicial
+# -- Mensaje inicial --
+clear
 echo "Comenzando instalacion..."
 
-# Actualizar sistema
+# -- Elegir repositorios --
+termux-change-repos
+
+# -- Actualizar sistema --
 pkg update -y
 pkg upgrade -y
 
-# Crear carpetas
+# -- Crear carpetas --
 mkdir ~/.local/bin
 mkdir ~/.config
 
-# Instalar paquetes
-pkg install -y git wget neovim lf neofetch htop python
+# -- Instalar paquetes --
+pkg install -y git wget micro lf neofetch htop python gcc
 
-# Instalar temas de termux
-git clone https://github.com/TakYzGG/termux-config
+# -- Instalar temas de termux --
 mv termux-config/temas ~/.temas
 
-# Clonar mis dots
-git clone https://github.com/TakYzGG/my-dots2
-
-# Instalar configuracion de bash
+# -- Configuracion bash --
+wget https://raw.githubusercontent.com/TakYzGG/my-dots/main/.bashrc
 mv my-dots2/dots/bashrc ~/.bashrc
 
-# Instalar temas de neovim
-mv my-dots2/nvim ~/.config/nvim
-
-# Mover script para cambiar los temas
+# -- Mover script para cambiar los temas --
 chmod +x termux-config/cambiar_tema
 mv termux-config/cambiar_tema ~/.local/bin
 
-# Eliminar carpetas
-rm -rf termux-config
-rm -rf my-dots2
-
-# mensaje final
+# -- Mensaje final --
+clear
 echo "Termino la instalacion"
