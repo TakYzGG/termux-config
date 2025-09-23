@@ -16,7 +16,7 @@ pkg upgrade -y
 pkg install -y git wget micro lf neofetch htop python clang
 
 # -- Configuracion bash --
-wget https://raw.githubusercontent.com/TakYzGG/my-dots/main/.bashrc
+wget https://raw.githubusercontent.com/TakYzGG/my-dots2/refs/heads/main/dots/bashrc
 mv bashrc ~/.bashrc
 
 # -- Mensaje final --
