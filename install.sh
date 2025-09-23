@@ -6,14 +6,14 @@ clear
 echo "Comenzando instalacion..."
 
 # -- Elegir repositorios --
-termux-change-repos
+termux-change-repo
 
 # -- Actualizar sistema --
 pkg update -y
 pkg upgrade -y
 
 # -- Instalar paquetes --
-pkg install -y git wget micro lf neofetch htop python gcc
+pkg install -y git wget micro lf neofetch htop python clang
 
 # -- Configuracion bash --
 wget https://raw.githubusercontent.com/TakYzGG/my-dots/main/.bashrc
